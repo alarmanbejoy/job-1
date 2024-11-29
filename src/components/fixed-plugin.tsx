@@ -8,7 +8,7 @@ export function FixedPlugin() {
       <Button
         color="white"
         size="sm"
-        className="!fixed bottom-4 right-4 flex gap-1 pl-2 items-center border border-blue-gray-50"
+        className="flex gap-1 pl-2 items-center border border-blue-gray-50"
       >
         <Image
           width={128}
@@ -17,7 +17,7 @@ export function FixedPlugin() {
           alt="Material Tailwind"
           src="https://www.material-tailwind.com/favicon.png"
         />{" "}
-        Made With Material Tailwind
+        Made by  al arman bejoy
       </Button>
     </a>
   );

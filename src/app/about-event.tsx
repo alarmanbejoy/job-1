@@ -3,18 +3,18 @@
 import { Typography } from "@material-tailwind/react";
 import AboutCard from "@/components/about-card";
 
-const EVENT_INFO = [
+const GYM_INFO = [
   {
-    title: "Cutting-Edge Insights!",
+    title: "State-of-the-Art Facilities",
     description:
-      "Gain deep insights into the latest AI trends, developments, and applications that are reshaping industries worldwide. ",
-    subTitle: "Presentation",
+      "Experience top-tier equipment, modern training areas, and cutting-edge fitness technology designed to help you achieve your goals.",
+    subTitle: "Facilities",
   },
   {
-    title: "Practical Knowledge!",
+    title: "Expert Trainers",
     description:
-      "Attend workshops and hands-on sessions to acquire practical skills that you can apply immediately.",
-    subTitle: "Workshops",
+      "Our certified trainers provide personalized guidance, ensuring your workout plans are safe, effective, and tailored to your needs.",
+    subTitle: "Training",
   },
 ];
 
@@ -22,33 +22,34 @@ export function AboutEvent() {
   return (
     <section className="container mx-auto flex flex-col items-center px-4 py-10">
       <Typography variant="h6" className="text-center mb-2" color="orange">
-        About the event
+        About EnergyVault Gym
       </Typography>
       <Typography variant="h3" className="text-center" color="blue-gray">
-        Why Attend?
+        Why Choose Us?
       </Typography>
       <Typography
         variant="lead"
         className="mt-2 lg:max-w-4xl mb-8 w-full text-center font-normal !text-gray-500"
       >
-        Welcome to the AI Conference 2023, where the future unfolds! Whether
-        you&apos;re a seasoned AI professional, a curious newcomer, or a
-        business leader looking to harness the power of AI, this conference is
-        designed to inspire, educate, and connect.
+        Welcome to EnergyVault Gym, where fitness meets innovation. Whether
+        you're a beginner or a seasoned athlete, our gym is designed to inspire,
+        motivate, and push you to your limits in a supportive and dynamic
+        environment.
       </Typography>
-      <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4 ">
-        {EVENT_INFO.map((props, idx) => (
+      <div className="mt-8 w-full grid grid-cols-1 md:grid-cols-2 gap-4">
+        {GYM_INFO.map((props, idx) => (
           <AboutCard key={idx} {...props} />
         ))}
         <div className="md:col-span-2">
           <AboutCard
-            title="Networking!"
-            subTitle="Community"
-            description="Connect with industry leaders, AI experts, and fellow enthusiasts to build valuable professional relationships."
+            title="Community & Motivation"
+            subTitle="Support"
+            description="Join a vibrant community of like-minded individuals who share your passion for fitness, health, and personal growth."
           />
         </div>
       </div>
     </section>
+    
   );
 }
 

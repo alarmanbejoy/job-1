@@ -3,10 +3,10 @@ import { Navbar, Footer } from "@/components";
 
 // sections
 import Hero from "./hero";
-import SponsoredBy from "./sponsored-by";
+
 import AboutEvent from "./about-event";
 import OurStats from "./our-stats";
-import EventContent from "./event-content";
+import ClientTestimonials from "./client-testimonials";
 import Faq from "./faq";
 
 export default function Portfolio() {
@@ -14,10 +14,10 @@ export default function Portfolio() {
     <>
       <Navbar />
       <Hero />
-      <SponsoredBy />
+     
       <AboutEvent />
       <OurStats />
-      <EventContent />
+      < ClientTestimonials/>
       <Faq />
       <Footer />
     </>
