@@ -6,7 +6,27 @@ const config: Config = withMT({
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Montserrat", "sans-serif"],
+        mono: [
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "Liberation Mono",
+          "Courier New",
+          "monospace",
+        ],
+        anton: ["Anton SC", "sans-serif"],  // Adding Anton SC font
+        plexMono: ["IBM Plex Mono", "serif"],  // Adding IBM Plex Mono font
+      },
+      screens: {
+        xl: "1200px", // Custom breakpoint
+      },
+    },
+  },
   plugins: [],
 });
 

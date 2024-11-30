@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import { Layout, FixedPlugin } from "@/components";
 
+// Roboto font using Next.js font optimization
 const roboto = Roboto({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700", "900"],
@@ -23,18 +24,32 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Existing script */}
         <script
           defer
           data-site="YOUR_DOMAIN_HERE"
           src="https://api.nepcha.com/js/nepcha-analytics.js"
         ></script>
+        
+        {/* Existing favicon */}
         <link rel="shortcut icon" href="/favicon.png" type="image/png" />
+        
+        {/* Add CDN for Anton SC and IBM Plex Mono fonts */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Anton+SC&family=IBM+Plex+Mono:wght@100;200;300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
+
       </head>
       <body className={roboto.className}>
         <Layout>
           {children}
           <FixedPlugin />
         </Layout>
+        
+        {/* Font Awesome CDN for icons */}
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"

@@ -1,3 +1,32 @@
+
+@import "@fontsource/montserrat/400.css"; /* Regular */
+@import "@fontsource/montserrat/700.css"; /* Bold */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+html {
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  body {
+    font-family: "Montserrat", sans-serif;
+  }
+
+  /* Subtle Glowing Effect */
+@keyframes subtleGlow {
+    0% {
+      box-shadow: 0 0 5px rgba(239, 108, 0, 0.5), 0 0 10px rgba(239, 108, 0, 0.5);
+    }
+    50% {
+      box-shadow: 0 0 10px rgba(239, 108, 0, 0.8), 0 0 15px rgba(239, 108, 0, 0.8);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(239, 108, 0, 0.5), 0 0 10px rgba(239, 108, 0, 0.5);
+    }
+  }
+  
+  /* Apply the glow only on the active button */
+  .glowing-button {
+    animation: subtleGlow 1.5s ease-in-out infinite;
+  }
+  

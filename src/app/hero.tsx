@@ -12,9 +12,14 @@ function Hero() {
           <Typography variant="h3" color="white" className="mb-2">
             Train Smarter, Not Harder
           </Typography>
-          <Typography variant="h1" color="white" className="lg:max-w-3xl">
-            EnergyVault Gym: Your Path to Peak Fitness
-          </Typography>
+          <Typography
+  variant="h1"
+  className="lg:max-w-5xl font-bold text-5xl lg:text-7xl font-anton text-[rgb(239,108,0)]"
+>
+  EnergyVault Gym: Your Path to Peak Fitness
+</Typography>
+
+
           <Typography
             variant="lead"
             color="white"

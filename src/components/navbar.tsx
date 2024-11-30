@@ -1,12 +1,7 @@
 import React from "react";
-import {
-  Navbar as MTNavbar,
-  Collapse,
-  Button,
-  IconButton,
-  Typography,
-} from "@material-tailwind/react";
+import { Navbar as MTNavbar, Collapse, Button, IconButton, Typography } from "@material-tailwind/react";
 import { XMarkIcon, Bars3Icon } from "@heroicons/react/24/solid";
+import Link from "next/link"; // Import Link from Next.js
 
 // NavItem component to render individual navigation items
 interface NavItemProps {
@@ -19,7 +14,7 @@ function NavItem({ children, href }: NavItemProps) {
     <li>
       <Typography
         as="a"
-        href={href || "#"}
+        href={href || "#"} // In case of undefined href, default to "#" (fallback)
         target={href ? "_blank" : "_self"}
         variant="paragraph"
         className="flex items-center gap-2 font-medium hover:text-orange-600 transition-all transform duration-200"
@@ -30,19 +25,19 @@ function NavItem({ children, href }: NavItemProps) {
   );
 }
 
-// Navigation menu data (No icons here)
+// Navigation menu data (Updated to valid Next.js routes)
 const NAV_MENU = [
   {
     name: "Home",
-    href: "#",
+    href: "/", // Home route for Next.js
   },
   {
     name: "Admin Dashboard",
-    href: "#",
+    href: "/admin", // Example Admin Dashboard route
   },
   {
     name: "Trainer Dashboard",
-    href: "#",
+    href: "/trainer", // Example Trainer Dashboard route
   },
 ];
 
@@ -56,10 +51,7 @@ export function Navbar() {
 
   // Close menu on window resize
   React.useEffect(() => {
-    window.addEventListener(
-      "resize",
-      () => window.innerWidth >= 960 && setOpen(false)
-    );
+    window.addEventListener("resize", () => window.innerWidth >= 960 && setOpen(false));
   }, []);
 
   // Change navbar color on scroll
@@ -114,15 +106,29 @@ export function Navbar() {
           ))}
         </ul>
 
-        {/* Login Button */}
+        {/* Button Section */}
         <div className="hidden items-center gap-4 lg:flex ml-auto">
-          <Button
-            color="orange" // Set background color to orange
-            variant="filled"
-            className="bg-orange-800 text-white px-6 py-2 hover:bg-orange-700 transition-all"
-          >
-            Log in
-          </Button>
+          {/* Log in Button */}
+          <Link href="/login">
+            <Button
+              color="orange" // Set background color to orange
+              variant="outlined"
+              className="border-2 border-orange-800 text-orange-800 px-6 py-2 hover:bg-orange-100 transition-all"
+            >
+              Log in
+            </Button>
+          </Link>
+
+          {/* Register Button */}
+          <Link href="/register">
+            <Button
+              color="orange" // Set background color to orange
+              variant="outlined"
+              className="border-2 border-orange-800 text-orange-800 px-6 py-2 hover:bg-orange-100 transition-all"
+            >
+              Register
+            </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -151,7 +157,12 @@ export function Navbar() {
             ))}
           </ul>
           <div className="mt-6 flex items-center gap-4">
-            <Button variant="text">Log in</Button>
+            <Link href="/login">
+              <Button variant="outlined">Log in</Button>
+            </Link>
+            <Link href="/register">
+              <Button variant="outlined">Register</Button>
+            </Link>
           </div>
         </div>
       </Collapse>
